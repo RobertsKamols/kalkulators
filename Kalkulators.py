@@ -19,6 +19,31 @@ def btnCommand(command):
     e.delete(0,END)
     return 0
 
+def vienads():
+    global num2
+    num2=(int(e.get()))
+    result=0
+    if mathOp=="-":
+        result=num1-num2
+    elif mathOp=="+":
+        result=num1+num2
+    elif mathOp=="/":
+        result=num1/num2
+    elif mathOp=="*":
+        result=num1*num2
+    else:
+        result=0
+    e.delete(0, END)
+    e.insert(0, str(result))
+    return 0
+
+def notirit():
+    e.delete(0, END)
+    num1=0
+    mathOp=""
+    return 0
+     
+
 
 e=Entry(mansLogs, width=15, font=("Ariel Black",20))
 e.grid(row=0, column=0, columnspan=4)
@@ -39,8 +64,8 @@ btnsum=Button(mansLogs, text="+", padx="40", pady="20",command=lambda:btnCommand
 btnmin=Button(mansLogs, text="-", padx="40", pady="20", command=lambda:btnCommand('-'))
 btndal=Button(mansLogs, text="/", padx="40", pady="20", command=lambda:btnCommand('/'))
 btnreiz=Button(mansLogs, text="*", padx="40", pady="20", command=lambda:btnCommand('*'))
-btnvien=Button(mansLogs, text="=", padx="40", pady="20", command=lambda:btnCommand('='))
-btnpun=Button(mansLogs, text=".", padx="40", pady="20",command=lambda:btnCommand('.'))
+btnvien=Button(mansLogs, text="=", padx="40", pady="20", command=vienads)
+btnClean=Button(mansLogs, text="C", padx="40", pady="20",command=notirit)
 
 
 btn1.grid(row=1,column=0)
@@ -59,7 +84,7 @@ btn9.grid(row=3,column=2)
 btndal.grid(row=3,column=3)
 
 btn0.grid(row=4,column=0)
-btnpun.grid(row=4,column=1)
+btnClean.grid(row=4,column=1)
 btnreiz.grid(row=4,column=2)
 btnvien.grid(row=4,column=3)
 
