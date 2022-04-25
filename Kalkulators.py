@@ -1,4 +1,6 @@
+from ast import operator
 from tkinter import*
+from math import*
 mansLogs=Tk()
 mansLogs.title("kalkulators")
 #mansLogs.geometry("300x300")
@@ -37,6 +39,25 @@ def vienads():
     e.insert(0, str(result))
     return 0
 
+def sq_rt():
+    global operator
+    global num1
+    global mathOp
+    num1=(float(e.get()))
+    num1=sqrt(num1)
+    e.delete(0, END)
+    e.insert(0, num1)
+    return 0
+
+def loga():
+    global operator
+    global num1
+    num1=(float(e.get()))
+    num1=log(num1,10)
+    e.delete(0, END)
+    e.insert(0, num1)
+    return 0
+
 def notirit():
     e.delete(0, END)
     num1=0
@@ -45,33 +66,37 @@ def notirit():
      
 
 
-e=Entry(mansLogs, width=15, font=("Ariel Black",20))
+e=Entry(mansLogs, width=15, bd=20, font=("Ariel Black",20))
 e.grid(row=0, column=0, columnspan=4)
 
 
-btn0=Button(mansLogs, text="0", padx="40", pady="20", command=lambda:btnClick(0))
-btn1=Button(mansLogs, text="1", padx="40", pady="20", command=lambda:btnClick(1))
-btn2=Button(mansLogs, text="2", padx="40", pady="20", command=lambda:btnClick(2))
-btn3=Button(mansLogs, text="3", padx="40", pady="20", command=lambda:btnClick(3))
-btn4=Button(mansLogs, text="4", padx="40", pady="20", command=lambda:btnClick(4))
-btn5=Button(mansLogs, text="5", padx="40", pady="20", command=lambda:btnClick(5))
-btn6=Button(mansLogs, text="6", padx="40", pady="20", command=lambda:btnClick(6))
-btn7=Button(mansLogs, text="7", padx="40", pady="20", command=lambda:btnClick(7))
-btn8=Button(mansLogs, text="8", padx="40", pady="20", command=lambda:btnClick(8))
-btn9=Button(mansLogs, text="9", padx="40", pady="20", command=lambda:btnClick(9))
+btn0=Button(mansLogs, text="0", padx="40", pady="20", bd=7, bg='#D3E4CD', command=lambda:btnClick(0))
+btn1=Button(mansLogs, text="1", padx="40", pady="20", bd=7, bg='#D3E4CD', command=lambda:btnClick(1))
+btn2=Button(mansLogs, text="2", padx="40", pady="20", bd=7, bg='#D3E4CD',command=lambda:btnClick(2))
+btn3=Button(mansLogs, text="3", padx="40", pady="20", bd=7, bg='#D3E4CD',command=lambda:btnClick(3))
+btn4=Button(mansLogs, text="4", padx="40", pady="20", bd=7, bg='#D3E4CD',command=lambda:btnClick(4))
+btn5=Button(mansLogs, text="5", padx="40", pady="20", bd=7, bg='#D3E4CD',command=lambda:btnClick(5))
+btn6=Button(mansLogs, text="6", padx="40", pady="20", bd=7, bg='#D3E4CD',command=lambda:btnClick(6))
+btn7=Button(mansLogs, text="7", padx="40", pady="20", bd=7, bg='#D3E4CD',command=lambda:btnClick(7))
+btn8=Button(mansLogs, text="8", padx="40", pady="20", bd=7, bg='#D3E4CD',command=lambda:btnClick(8))
+btn9=Button(mansLogs, text="9", padx="40", pady="20", bd=7, bg='#D3E4CD',command=lambda:btnClick(9))
 
-btnsum=Button(mansLogs, text="+", padx="40", pady="20",command=lambda:btnCommand('+'))
-btnmin=Button(mansLogs, text="-", padx="40", pady="20", command=lambda:btnCommand('-'))
-btndal=Button(mansLogs, text="/", padx="40", pady="20", command=lambda:btnCommand('/'))
-btnreiz=Button(mansLogs, text="*", padx="40", pady="20", command=lambda:btnCommand('*'))
-btnvien=Button(mansLogs, text="=", padx="40", pady="20", command=vienads)
-btnClean=Button(mansLogs, text="C", padx="40", pady="20",command=notirit)
+
+btnKvads=Button(mansLogs, text="√", padx="40", pady="20", bd=7, bg='#ADC2A9',command=sq_rt)
+btnLog=Button(mansLogs, text="log", padx="40", pady="20", bd=7, bg='#ADC2A9',command=loga)
+btnsum=Button(mansLogs, text="+", padx="38", pady="20", bd=7, bg='#ADC2A9', command=lambda:btnCommand('+'))
+btnmin=Button(mansLogs, text="-", padx="40", pady="20",  bd=7, bg='#ADC2A9',command=lambda:btnCommand('-'))
+btndal=Button(mansLogs, text="/", padx="40", pady="20",  bd=7, bg='#ADC2A9',command=lambda:btnCommand('/'))
+btnreiz=Button(mansLogs, text="*", padx="40", pady="20",  bd=7, bg='#ADC2A9',command=lambda:btnCommand('*'))
+btnvien=Button(mansLogs, text="=", padx="40", pady="20", bd=7,  bg='#ADC2A9',command=vienads)
+btnClean=Button(mansLogs, text="C", padx="40", pady="20", bd=7, bg='#ADC2A9',command=notirit)
 
 
 btn1.grid(row=1,column=0)
 btn2.grid(row=1,column=1)
 btn3.grid(row=1,column=2)
 btnsum.grid(row=1,column=3)
+
 
 btn4.grid(row=2,column=0)
 btn5.grid(row=2,column=1)
@@ -88,5 +113,7 @@ btnClean.grid(row=4,column=1)
 btnreiz.grid(row=4,column=2)
 btnvien.grid(row=4,column=3)
 
+btnKvads.grid(row=5, column=0)
+btnLog.grid(row=5, column=1)
 
 mansLogs.mainloop()
