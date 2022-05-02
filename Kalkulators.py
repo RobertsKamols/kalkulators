@@ -1,8 +1,10 @@
+
 from ast import operator
 from tkinter import*
 from math import*
 mansLogs=Tk()
 mansLogs.title("kalkulators")
+mansLogs['bg']='#D3E4CD'
 #mansLogs.geometry("300x300")
 
 def btnClick(number):
@@ -77,7 +79,7 @@ def notirit():
      
 
 
-e=Entry(mansLogs, width=15, bd=20, font=("Ariel Black",20))
+e=Entry(mansLogs, width=15, bd=20, font=("ds-digital",20))
 e.grid(row=0, column=0, columnspan=4)
 
 
@@ -92,14 +94,14 @@ btn7=Button(mansLogs, text="7", padx="43", pady="20", bd=7, bg='#D3E4CD',command
 btn8=Button(mansLogs, text="8", padx="43", pady="20", bd=7, bg='#D3E4CD',command=lambda:btnClick(8))
 btn9=Button(mansLogs, text="9", padx="43", pady="20", bd=7, bg='#D3E4CD',command=lambda:btnClick(9))
 
-btnP=Button(mansLogs, text="%", padx="38", pady="20", bd=7, bg='#ADC2A9', command=lambda:btnCommand('%'))
+btnP=Button(mansLogs, text="%", padx="40", pady="20", bd=7, bg='#ADC2A9', command=lambda:btnCommand('%'))
 btnkvad=Button(mansLogs, text="x2", padx="39", pady="20", bd=7, bg='#ADC2A9', command=kvad)
 btnKvads=Button(mansLogs, text="√", padx="40", pady="20", bd=7, bg='#ADC2A9',command=sq_rt)
 btnLog=Button(mansLogs, text="log", padx="40", pady="20", bd=7, bg='#ADC2A9',command=loga)
 btnsum=Button(mansLogs, text="+", padx="38", pady="20", bd=7, bg='#ADC2A9', command=lambda:btnCommand('+'))
 btnmin=Button(mansLogs, text="-", padx="40", pady="20",  bd=7, bg='#ADC2A9',command=lambda:btnCommand('-'))
 btndal=Button(mansLogs, text="/", padx="40", pady="20",  bd=7, bg='#ADC2A9',command=lambda:btnCommand('/'))
-btnreiz=Button(mansLogs, text="*", padx="43", pady="20",  bd=7, bg='#ADC2A9',command=lambda:btnCommand('*'))
+btnreiz=Button(mansLogs, text="*", padx="40", pady="20",  bd=7, bg='#ADC2A9',command=lambda:btnCommand('*'))
 btnvien=Button(mansLogs, text="=", padx="38", pady="20", bd=7,  bg='#ADC2A9',command=vienads)
 btnClean=Button(mansLogs, text="C", padx="40", pady="20", bd=7, bg='#ADC2A9',command=notirit)
 
@@ -121,8 +123,8 @@ btn9.grid(row=3,column=2)
 btndal.grid(row=3,column=3)
 
 btn0.grid(row=4,column=1)
-btnP.grid(row=4,column=3)
-btnreiz.grid(row=4,column=2)
+btnP.grid(row=4,column=2)
+btnreiz.grid(row=4,column=3)
 btnvien.grid(row=5,column=3)
 
 btnKvads.grid(row=5, column=0)
